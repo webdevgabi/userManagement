@@ -12,7 +12,7 @@ router.post("/", async (req, res) => {
 
     isInserted ? 
     res.send("Successful registration") :
-    res.status(500).send("Unsuccessful registration")
+    res.status(500).send("Unsuccessful registration.")
 
 })
 
