@@ -1,4 +1,4 @@
-const Validator = require("../")
+const Validator = require("..")
 
 module.exports = async (req, res, next) => {
     const { username, password } = req.body;

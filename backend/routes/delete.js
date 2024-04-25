@@ -1,7 +1,9 @@
 const router = require("express").Router()
 
+// UTILITIES
 const UserByToken = require("../utilities/userByToken")
 
+// DATABASE
 const deleteOne = require("../database/deleteOne")
 const deleteMany = require("../database/deleteMany")
 

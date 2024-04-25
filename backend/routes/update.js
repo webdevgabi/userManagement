@@ -1,10 +1,16 @@
 const router = require("express").Router()
+
+// DATABASE
 const updateOne = require("../database/updateOne")
 
+// UTILITIES
 const UserByToken = require("../utilities/userByToken")
+
+// SCHEMA
 const userSchema = require("../schema/update")
 
-const updateValidation = require("../validation/middlewares/updateValidation")
+// VALIDATION
+const updateValidation = require("../validation/middlewares/update")
 router.use(updateValidation)
 
 router.patch("/", async (req, res) => {

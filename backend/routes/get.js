@@ -1,8 +1,10 @@
 const router = require("express").Router()
 
+// UTILITIES
 const UserByUsername = require("../utilities/userByUsername")
 const UserByToken = require("../utilities/userByToken")
 
+// SCHEMA
 const authorizedGet = require("../schema/authorizedGet")
 const unAuthorizedGet = require("../schema/unAuthorizedGet")
 

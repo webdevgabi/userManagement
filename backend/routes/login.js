@@ -1,11 +1,17 @@
 const router = require("express").Router()
+const { compare } = require("bcrypt")
+
+// UTILITIES
 const tokenSchema = require("../schema/token")
+
+// DATABASE
 const insertOne = require("../database/insertOne")
 
+// UTILITIES
 const userByUsername = require("../utilities/userByUsername")
-const isPasswordMatch = require("../utilities/isPasswordMatch")
 
-const loginValidation = require("../validation/middlewares/loginValidation")
+// VALIDATION
+const loginValidation = require("../validation/middlewares/login")
 router.use(loginValidation)
 
 router.post("/", async (req, res) => {
@@ -16,7 +22,7 @@ router.post("/", async (req, res) => {
         return;
     }
 
-    const isPasswordCorrect = isPasswordMatch(req.body.password, user.password)
+    const isPasswordCorrect = await compare(req.body.password, user.password)
     if(!isPasswordCorrect) {
         res.status(422).json({ validation: { password: ["Wrong password"] } })
         return;

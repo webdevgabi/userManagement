@@ -1,4 +1,5 @@
 const find = require("../database/find")
+const deleteMany = require("../database/deleteMany");
 
 module.exports = async token => {
 
@@ -6,6 +7,7 @@ module.exports = async token => {
         return false
     }
 
+    await deleteMany({ collection: 'tokens', condition: { expiryDate: { $lt:  new Date() } } })
     const isFound = await find({ collection: "tokens", condition: { token: token } })
     
     if(!isFound) {
