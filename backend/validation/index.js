@@ -31,4 +31,7 @@ validation.prototype.ContainNumber = ContainNumber;
 const ContainSpecial = require("./utilities/ContainSpecial")
 validation.prototype.ContainSpecial = ContainSpecial;
 
+const NotContainSpecial = require("./utilities/NotContainSpecial")
+validation.prototype.NotContainSpecial = NotContainSpecial;
+
 module.exports = validation

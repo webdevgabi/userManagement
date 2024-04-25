@@ -43,3 +43,4 @@ Finally you can start the application, which must be done on both client and bac
     - Express 4.19.2 ([official documentation](https://expressjs.com/))
     - Nodemon 3.1.0 ([official documentation](https://nodemon.io/))
     - MongoDB 6.5.0 ([official documentation](https://www.mongodb.com/docs/drivers/node/current/))
+    - Bcrypt 5.1.1 ([official documentation](https://www.npmjs.com/package/bcrypt))
