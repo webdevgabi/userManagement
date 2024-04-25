@@ -5,7 +5,7 @@ const insertOne = require("../database/insertOne")
 const userByUsername = require("../utilities/userByUsername")
 const isPasswordMatch = require("../utilities/isPasswordMatch")
 
-const loginValidation = require("../middlewares/loginValidation")
+const loginValidation = require("../validation/middlewares/loginValidation")
 router.use(loginValidation)
 
 router.post("/", async (req, res) => {

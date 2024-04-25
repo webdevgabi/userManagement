@@ -8,7 +8,7 @@ const unAuthorizedGet = require("../schema/unAuthorizedGet")
 
 router.get("/:username?", async (req, res) => {
 
-    let userByToken = await UserByToken(req.headers.token)
+    const userByToken = await UserByToken(req.headers.token)
 
     if(req.params.username) {
         const userByUsername = await UserByUsername(req.params.username)

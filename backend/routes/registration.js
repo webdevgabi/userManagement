@@ -2,7 +2,7 @@ const router = require("express").Router()
 const insertOne = require("../database/insertOne")
 const registrationSchema = require("../schema/registration")
 
-const validation = require("../middlewares/registrationValidation")
+const validation = require("../validation/middlewares/registrationValidation")
 router.use(validation)
 
 router.post("/", async (req, res) => {
