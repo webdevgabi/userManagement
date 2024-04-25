@@ -4,9 +4,13 @@ In this full-stack project, we are capable of creating, deleting, updating, or r
 ## How to use
 The application is built in [NodeJS](https://nodejs.org/en) environment, so it must first be installed on your computer.
 
-You should run `npm install` in the backend folder, which will download all the packages that needs for the application
+Datas are stored in a [MongoDB](https://www.mongodb.com/) database, so you need to have a database in local or cloud. The connection URL of which is specified in `main.js` in the backend folder.
 
-Finally you can start the application: `nodemon main` in the backend folder
+You should run `npm install` in the backend and frontend folders, which will download all the packages that needs for the application
+
+Finally you can start the application, which must be done on both client and backend side:
+- Client (frontend folder): `npm run dev`
+- Backend (backend folder): `nodemon main`
 
 ## Data Structures
 **User:**
@@ -38,3 +42,4 @@ Finally you can start the application: `nodemon main` in the backend folder
 - **Backend:**
     - Express 4.19.2 ([official documentation](https://expressjs.com/))
     - Nodemon 3.1.0 ([official documentation](https://nodemon.io/))
+    - MongoDB 6.5.0 ([official documentation](https://www.mongodb.com/docs/drivers/node/current/))

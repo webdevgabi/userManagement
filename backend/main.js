@@ -1,9 +1,11 @@
+const connection = require("./database/connection")
 const express = require('express')
 const app = express();
 
 // SETTINGS
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
+connection({ connectionString: 'mongodb://localhost:27017', db: 'usermanagement' })
 
 // ROUTES
 const loginRoute = require("./routes/login")
