@@ -13,6 +13,7 @@ router.patch("/", async (req, res) => {
 
     if(!userByToken) {
         res.status(422).send("Invalid token")
+        return;
     }
 
     const updatedSchema = await userSchema(req.body, userByToken)
