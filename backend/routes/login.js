@@ -2,18 +2,27 @@ const router = require("express").Router()
 const tokenSchema = require("../schema/token")
 const insertOne = require("../database/insertOne")
 
+const userByUsername = require("../utilities/userByUsername")
+const isPasswordMatch = require("../utilities/isPasswordMatch")
+
 const loginValidation = require("../middlewares/loginValidation")
 router.use(loginValidation)
 
-const userByUsername = require("../middlewares/userByUsername")
-router.use(userByUsername)
-
-const passwordIsMatch = require("../middlewares/passwordIsMatch")
-router.use(passwordIsMatch)
-
 router.post("/", async (req, res) => {
 
-    const token = await tokenSchema(req.user._id)
+    const user = await userByUsername(req.body.username)
+    if(!user) {
+        res.status(422).json({ validation: { username: ["No user found at the username."] } })
+        return;
+    }
+
+    const isPasswordCorrect = isPasswordMatch(req.body.password, user.password)
+    if(!isPasswordCorrect) {
+        res.status(422).json({ validation: { password: ["Wrong password"] } })
+        return;
+    }
+
+    const token = await tokenSchema(user._id)
     const isInserted = await insertOne({ collection: 'tokens', data: token })
 
     isInserted ?
