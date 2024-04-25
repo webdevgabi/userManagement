@@ -24,17 +24,17 @@ Finally you can start the application, which must be done on both client and bac
     details: {
         //custom data about user (birthday, ect..)
     },
-    createdAt: //date of the user created,
-    updatedAt: //date of the user last updated
+    createdAt: /* date of the user created */,
+    updatedAt: /* date of the user last updated */
 }
 ```
 **Token:**
 ```js
 {
     _id: ObjectId('randomString'),
-    ownerID: ObjectId('ownerID')
+    ownerID: ObjectId('ownerID'),
     token: 'randomString',
-    expiryDate: //current date + 1 month
+    expiryDate: /* current date + 1 month */
 }
 ```
 
@@ -44,3 +44,6 @@ Finally you can start the application, which must be done on both client and bac
     - Nodemon 3.1.0 ([official documentation](https://nodemon.io/))
     - MongoDB 6.5.0 ([official documentation](https://www.mongodb.com/docs/drivers/node/current/))
     - Bcrypt 5.1.1 ([official documentation](https://www.npmjs.com/package/bcrypt))
+- **Frontend:**
+    - Vite 5.2.0 ([documentation](https://vitejs.dev/))
+    - React 18.2.0 ([documentation](https://legacy.reactjs.org/))
