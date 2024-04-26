@@ -48,3 +48,10 @@ main {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(6px);
 }
+
+@media screen and (max-width: 480px) {
+    .container {
+        height: 95vh;
+        min-width: 95%;
+    }
+}

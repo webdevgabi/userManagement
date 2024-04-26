@@ -47,3 +47,6 @@ Finally you can start the application, which must be done on both client and bac
 - **Frontend:**
     - Vite 5.2.0 ([documentation](https://vitejs.dev/))
     - React 18.2.0 ([documentation](https://legacy.reactjs.org/))
+    - React Rooter Dom 6.22.3 ([documentation](https://reactrouter.com/en/main))
+    - Axios 1.6.8 ([documentation](https://axios-http.com/))
+    - Js-Cookie 3.0.5 ([documentation](https://www.npmjs.com/package/js-cookie))
