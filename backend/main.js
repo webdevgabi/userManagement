@@ -1,10 +1,12 @@
 const connection = require("./database/connection")
 const express = require('express')
+const CORS = require("cors")
 const app = express();
 
 // SETTINGS
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
+app.use(CORS())
 connection({ connectionString: 'mongodb://localhost:27017', db: 'usermanagement' })
 
 // ROUTES
